@@ -4,8 +4,6 @@ import { css } from '@emotion/css'
 import Map, {Marker} from 'react-map-gl';
 
 
-const MAPBOX_TOKEN = 'pk.eyJ1IjoibHNrb3Zyb24iLCJhIjoiY2xjdXZjcTd0MHA0NDNwcG9jcmF5bW43NyJ9.ZlGueYFzCRCOpdju_i1Glw';
-
 const GoodPlacesMap = () => {
     return (
         <Container maxWidth="lg" className={
@@ -23,7 +21,7 @@ const GoodPlacesMap = () => {
                 }}
                 style={{width: 800, height: 600}}
                 mapStyle="mapbox://styles/mapbox/streets-v9"
-                mapboxAccessToken={MAPBOX_TOKEN}
+                mapboxAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
             >
                 <Marker longitude={-122.4} latitude={37.8} color="red" />
             </Map>
